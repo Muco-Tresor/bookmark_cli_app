@@ -1,0 +1,12 @@
+{
+  "name": "bookmark_cli_app",
+  "version": "1.0.0",
+  "description": "a bookmark command line interface app made with nodejs",
+  "main": "index.js",
+  "repository": "https://github.com/Muco-Tresor/bookmark_cli_app.git",
+  "author": "Muco Tresor <mucyotreasure@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "yargs": "^12.0.1"
+  }
+}
