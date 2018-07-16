@@ -13,6 +13,6 @@ App functions
 ------------------------------------
 1.add a bookmark -> done
 2.read a bookmark -> done
-3.remove a bookmark ->working
+3.remove a bookmark -> done
 4.read a list of a bookmark
 5.search a bookmark
