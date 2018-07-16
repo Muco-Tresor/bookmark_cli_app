@@ -72,7 +72,7 @@ const add = ({title, url}) => {
  * @param  {[string]} options.title [a bookmark title]
  * @return {[object]}               [ a bookmark]
  */
-const find = ({title}) => {
+const get = ({title}) => {
     const bookmarks = fetchBookmarks();
     return bookmarks.filter( (bookmark) => bookmark.title === title)[0];
 }
@@ -94,10 +94,23 @@ const remove = ({title}) => {
     }
 }
 
+const getAll = () => {
+    const bookmarks = fetchBookmarks();
+    const bookmarksNumber = bookmarks.length > 1
+                            ? `(${bookmarks.length}) notes`
+                            : `(${bookmarks.length}) note`;
+
+    return {
+        bookmarkNumber: bookmarksNumber,
+        bookmarks: bookmarks
+    };
+}
+
 //export modules
 module.exports = {
     add,
-    find,
+    get,
+    getAll,
     remove,
     log,
 
