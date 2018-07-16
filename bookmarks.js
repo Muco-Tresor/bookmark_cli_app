@@ -77,10 +77,28 @@ const find = ({title}) => {
     return bookmarks.filter( (bookmark) => bookmark.title === title)[0];
 }
 
+/**
+ * [remove a bookmark]
+ * @param  {[string]} options.title [a bookmark title]
+ * @return {[object]}               [a removed bookmark]
+ */
+const remove = ({title}) => {
+    const bookmarks = fetchBookmarks();
+    const filteredOutBookmarks = bookmarks.filter( (bookmark) => {
+        return bookmark.title !== title;
+    });
+
+    if(bookmarks.length !== filteredOutBookmarks.length) {
+        saveBookmarks(filteredOutBookmarks);
+        return title;
+    }
+}
+
 //export modules
 module.exports = {
     add,
     find,
+    remove,
     log,
 
 }

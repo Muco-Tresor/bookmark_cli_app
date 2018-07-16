@@ -27,7 +27,12 @@ switch (yargs._[0]) {
         break;
 
     case 'remove':
-        console.log('remove');
+        const removed_bookmark = bookmarks.remove(yargs);
+        if(removed_bookmark) {
+            console.log(`bookmark removed: ${removed_bookmark}`);
+        } else {
+            console.log('No bookmark removed');
+        }
         break;
 
     case 'list':
