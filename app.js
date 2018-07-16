@@ -17,7 +17,7 @@ switch (yargs._[0]) {
         break;
 
     case 'read':
-        const get_bookmark = bookmarks.find(yargs);
+        const get_bookmark = bookmarks.get(yargs);
         if(get_bookmark) {
             console.log('bookmark read');
             bookmarks.log(get_bookmark);

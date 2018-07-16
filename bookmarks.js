@@ -72,7 +72,7 @@ const add = ({title, url}) => {
  * @param  {[string]} options.title [a bookmark title]
  * @return {[object]}               [ a bookmark]
  */
-const find = ({title}) => {
+const get = ({title}) => {
     const bookmarks = fetchBookmarks();
     return bookmarks.filter( (bookmark) => bookmark.title === title)[0];
 }
@@ -80,7 +80,7 @@ const find = ({title}) => {
 //export modules
 module.exports = {
     add,
-    find,
+    get,
     log,
 
 }
