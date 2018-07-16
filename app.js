@@ -6,6 +6,9 @@ const bookmarks = require('./bookmarks.js');
 
 
 switch (yargs._[0]) {
+    /**
+     * add command
+     */
     case 'add':
         const bookmark = bookmarks.add(yargs);
         if(bookmark) {
@@ -16,6 +19,9 @@ switch (yargs._[0]) {
         }
         break;
 
+    /**
+     * read command
+     */
     case 'read':
         const get_bookmark = bookmarks.get(yargs);
         if(get_bookmark) {
@@ -26,6 +32,9 @@ switch (yargs._[0]) {
         }
         break;
 
+    /**
+     * remove command
+     */
     case 'remove':
         const removed_bookmark = bookmarks.remove(yargs);
         if(removed_bookmark) {
@@ -35,10 +44,22 @@ switch (yargs._[0]) {
         }
         break;
 
+    /**
+     * list command
+     */
     case 'list':
-        console.log('list');
+        const get_bookmarks = bookmarks.getAll();
+        if(get_bookmarks) {
+            console.log("Printing: " + get_bookmarks.bookmarkNumber);
+            get_bookmarks.bookmarks.forEach( (bookmark) => {
+                bookmarks.log(bookmark);
+            });
+        }
         break;
 
+    /**
+     * search command
+     */
     case 'search':
         console.log('search');
         break;

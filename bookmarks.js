@@ -93,12 +93,28 @@ const remove = ({title}) => {
         return title;
     }
 }
+/**
+ * [Print all bookmarks]
+ * @return {[object]} [number of bookmarks and printing all bookmarks]
+ */
+const getAll = () => {
+    const bookmarks = fetchBookmarks();
+    const bookmarksNumber = bookmarks.length > 1
+                            ? `(${bookmarks.length}) notes`
+                            : `(${bookmarks.length}) note`;
+
+    return {
+        bookmarkNumber: bookmarksNumber,
+        bookmarks: bookmarks
+    };
+}
 
 //export modules
 module.exports = {
     add,
-    remove,
     get,
+    getAll,
+    remove,
     log,
 
 }
