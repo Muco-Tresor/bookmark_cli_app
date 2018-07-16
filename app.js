@@ -61,7 +61,15 @@ switch (yargs._[0]) {
      * search command
      */
     case 'search':
-        console.log('search');
+        const foundBookmarks = bookmarks.search(yargs);
+        if(foundBookmarks) {
+            console.log(`(${foundBookmarks.bookmarkNumber}) found`)
+            foundBookmarks.bookmarks.forEach( (bookmark) => {
+                bookmarks.log(bookmark);
+            });
+        } else {
+            console.log("No Bookmark found");
+        }
         break;
 
     default:

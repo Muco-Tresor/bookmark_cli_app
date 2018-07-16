@@ -109,12 +109,31 @@ const getAll = () => {
     };
 }
 
+/**
+ * [word to search]
+ * @param  {[string]} options.word [a word to search]
+ * @return {[object]}              [number of bookmarks found
+ * and bookmarks found]
+ */
+const search = ({word}) => {
+    const foundBookmarks = fetchBookmarks().filter((bookmark) => {
+        return bookmark.title.includes(word);
+    });
+
+    return {
+        bookmarkNumber: foundBookmarks.length > 1
+                        ? `${(foundBookmarks.lenght)} bookmarks`
+                        : `${(foundBookmarks.length)} bookmark`,
+        bookmarks: foundBookmarks,
+    }
+}
 //export modules
 module.exports = {
     add,
     get,
     getAll,
     remove,
+    search,
     log,
 
 }
