@@ -67,8 +67,20 @@ const add = ({title, url}) => {
 }
 
 
+/**
+ * [find a bookmark]
+ * @param  {[string]} options.title [a bookmark title]
+ * @return {[object]}               [ a bookmark]
+ */
+const find = ({title}) => {
+    const bookmarks = fetchBookmarks();
+    return bookmarks.filter( (bookmark) => bookmark.title === title)[0];
+}
+
 //export modules
 module.exports = {
     add,
+    find,
     log,
+
 }

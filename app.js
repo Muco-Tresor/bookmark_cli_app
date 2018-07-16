@@ -17,7 +17,13 @@ switch (yargs._[0]) {
         break;
 
     case 'read':
-        console.log('read');
+        const get_bookmark = bookmarks.find(yargs);
+        if(get_bookmark) {
+            console.log('bookmark read');
+            bookmarks.log(get_bookmark);
+        } else {
+            console.log('No bookmark found.');
+        }
         break;
 
     case 'remove':
