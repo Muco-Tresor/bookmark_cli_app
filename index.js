@@ -26,6 +26,7 @@ const yargs = require('yargs')
 .command('list', 'show all bookmarks')
 .command('search', 'search a bookmark based on title', {
     title: titleOptions
+
 }).help('h').argv;
 
 // own module
