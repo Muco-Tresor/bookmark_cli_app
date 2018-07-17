@@ -1,5 +1,32 @@
+const titleOptions = {
+    describe: 'bookmark title',
+    demand: true,
+    alias: 't',
+}
+
+const urlOptions = {
+    describe: 'bookmark url',
+    demand: true,
+    alias: 'u',
+}
+
 // third party modules
-const yargs = require('yargs').argv;
+const yargs = require('yargs')
+.command('add', 'add a bookmark', {
+    title: titleOptions,
+    url: urlOptions
+})
+.command('read', 'show a bookmark', {
+    title: titleOptions,
+})
+.command('remove', 'remove a bookmark', {
+    title: titleOptions,
+    url: urlOptions,
+})
+.command('list', 'show all bookmarks')
+.command('search', 'search a bookmark based on title', {
+    title: titleOptions
+}).help('h').argv;
 
 // own module
 const bookmarks = require('./bookmarks.js');
