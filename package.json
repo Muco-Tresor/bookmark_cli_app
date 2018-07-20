@@ -6,7 +6,9 @@
 	"repository": "https://github.com/Muco-Tresor/bookmark_cli_app.git",
 	"author": "Muco Tresor <mucyotreasure@gmail.com>",
 	"license": "MIT",
-
+	"bin": {
+		"bookmark": "./index.js"
+	},
 	"dependencies": {
 		"yargs": "^12.0.1"
 	}
